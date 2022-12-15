@@ -1,0 +1,29 @@
+<div class="content">
+  <h2>Adjustment Type</h2>
+
+  <div class="card-container">
+    <label>Reasons</label>
+    <select
+      placeholder="Reasons"
+      [(ngModel)]="selectedReason"
+      (change)="changeReason($event)"
+    >
+      <option>--Select an adjustment reason--</option>
+      <option *ngFor="let country of Reasons">{{ country.name }}</option>
+    </select>
+  </div>
+
+  <div class="card-container">
+    <label>Adjustment Type</label>
+    <select placeholder="State" (change)="changeType($event)">
+      <option>--Choose an adjustment type--</option>
+      <option *ngFor="let type of types">{{ type.name }}</option>
+    </select>
+  </div>
+
+  <div class="card-container" *ngIf="hide">
+    <label>Value</label>
+    <input size="50" placeholder="{{ Placeholder }}" />
+    <label>show percentage or absolute as input typed </label>
+  </div>
+</div>
